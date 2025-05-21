@@ -90,13 +90,13 @@ BUTTERFLY.prototype = {
 
       let gradient = context.createRadialGradient(0, 0, 0, 0, 0, 60),
         rate = Math.sin(this.theta / 4);
-      gradient.addColorStop(0, "hsl(200, 100%, 40%)");
-      gradient.addColorStop(0.3, "hsl(200, 100%, " + (40 + 10 * rate) + "%)");
-      gradient.addColorStop(0.5, "hsl(200, 100%, " + (40 + 20 * rate) + "%)");
-      gradient.addColorStop(1, "hsl(200, 100%, " + (40 + 30 * rate) + "%)");
+      gradient.addColorStop(0, "hsl(113, 46.80%, 66.10%)");
+      gradient.addColorStop(0.3, "hsl(329, 75%, " + (40 + 10 * rate) + "%)");
+      gradient.addColorStop(0.5, "hsl(113, 50%, " + (70 + 20 * rate) + "%)");
+      gradient.addColorStop(1, "hsl(334, 44%, " + (40 + 30 * rate) + "%)");
 
       context.lineWidth = 2;
-      context.strokeStyle = "hsl(200, 100%, 80%)";
+      context.strokeStyle = "hsl(305, 88.70%, 89.60%)";
       context.fillStyle = gradient;
 
       context.save();
@@ -122,7 +122,7 @@ BUTTERFLY.prototype = {
       context.restore();
 
       context.lineWidth = 1.5;
-      context.strokeStyle = "hsl(200, 100%, 80%)";
+      context.strokeStyle = "hsl(313, 100.00%, 80.00%)";
       context.beginPath();
       context.moveTo(-2, -8);
       context.bezierCurveTo(
@@ -139,9 +139,9 @@ BUTTERFLY.prototype = {
 
     context.save();
     let gradient = context.createLinearGradient(-2, 0, 2, 0);
-    gradient.addColorStop(0, "hsl(200, 100%, 70%)");
-    gradient.addColorStop(0.5, "hsl(200, 100%, 80%)");
-    gradient.addColorStop(1, "hsl(200, 100%, 70%)");
+    gradient.addColorStop(0, "hsl(300, 100.00%, 70.00%)");
+    gradient.addColorStop(0.5, "hsl(330, 100.00%, 80.00%)");
+    gradient.addColorStop(1, "hsl(340, 100.00%, 70.00%)");
     context.fillStyle = gradient;
     context.beginPath();
     context.arc(0, -8, 2.5, 0, Math.PI * 2, false);
@@ -172,7 +172,7 @@ let PARTICLE = function (renderer, x, y) {
 PARTICLE.prototype = {
   FRICTION: 0.99,
   RADIUS: 2,
-  DELTA_OPACITY: 0.01,
+  DELTA_OPACITY: 0.009,
 
   init: function () {
     this.x += this.renderer.getRandomValue(-50, 50);
@@ -186,7 +186,7 @@ PARTICLE.prototype = {
     context.translate(this.x, this.y);
     context.scale(2 - this.opacity, 2 - this.opacity);
     context.beginPath();
-    context.fillStyle = "hsla(200, 100%, 70%, " + this.opacity + ")";
+    context.fillStyle = "hsla(113, 30%, 70%, " + this.opacity + ")";
     context.arc(0, 0, this.RADIUS, 0, Math.PI * 2, false);
     context.fill();
     context.restore();
